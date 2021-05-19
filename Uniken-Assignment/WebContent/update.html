@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update Record</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #4d4dff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #3385ff;
+  color: white;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 40px;
+  color:#4d4dff;
+ 
+}
+
+.update_form{
+	padding: 16px;
+	color:#4d4dff;
+	font-size: 20px;
+	max-width: 500px;
+  	margin: auto;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input[type=submit]{
+  background-color: #4d4dff;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+<div class="navbar">
+  <a href="welcome.html">Home</a>
+  <a href="view_record.html">View</a>
+  <a href="update.html">Manage</a>
+  <a href="delete.html">Delete</a>
+</div>
+
+<div class="main"></div>
+
+<div class="update_form">
+<h1>Update Record</h1>
+	<form name ="updateForm" action="updateurl" onsubmit = "return validateForm()" method="POST">
+        <table>
+            <tr>
+                <td>Corporate Name ::</td>
+                <td><input type="text" name="corp_name" placeholder="Name"></td>
+            </tr>
+          
+            <tr>
+                <td>Corporate ID ::</td>
+                <td><input type="text" name="corp_id" placeholder="Id"></td>
+            </tr>
+            
+            <tr>
+            	<td>Account Numbers ::</td>
+            	<td><input type="text" name="corp_acc" placeholder="Only Number"></td>
+            </tr>
+			
+            <tr align="center">
+                <td colspan="2"><input type="submit" value="Update">
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+	  var name = document.forms["updateForm"]["corp_name"].value;
+	  var id   = document.forms["updateForm"]["corp_id"].value;
+	  var accNo= document.forms["updateForm"]["corp_acc"].value;
+	  if (name == "" || id == "" || accNo == "") {
+	    alert("All field must be filled out");
+	    return false;
+	  }
+	}
+</script>
+
+</body>
+</html>
